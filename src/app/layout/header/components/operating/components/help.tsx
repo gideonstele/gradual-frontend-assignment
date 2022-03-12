@@ -1,5 +1,7 @@
 import { QuestionIcon, EmailIcon } from '@chakra-ui/icons'
 import {
+  HStack,
+  Show,
   Menu,
   MenuButton,
   MenuList,
@@ -12,15 +14,19 @@ export const Help = () => {
   return (
     <Menu placement="top">
       <MenuButton
-        as={QuestionIcon}
-        width="6"
-        height="6"
         _hover={{
           cursor: 'pointer',
         }}
-      />
+      >
+        <HStack>
+          <QuestionIcon width="6" height="6" />
+          <Show below="md">
+            <span>Helps</span>
+          </Show>
+        </HStack>
+      </MenuButton>
       <Portal>
-        <MenuList zIndex={4} fontSize="sm">
+        <MenuList zIndex="popover" fontSize="sm">
           <MenuItem
             as={Link}
             href="https://docs.agora.io/en/Video/landing-page?platform=Web"

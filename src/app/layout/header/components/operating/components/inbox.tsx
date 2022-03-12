@@ -8,13 +8,14 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   IconButton,
-  Box,
+  HStack,
   Portal,
   Tabs,
   TabList,
   Tab,
   TabPanels,
   TabPanel,
+  Show,
 } from '@chakra-ui/react'
 import { SettingsIcon, EmailIcon } from '@chakra-ui/icons'
 
@@ -22,20 +23,16 @@ export const Inbox = () => {
   return (
     <Popover placement="top-start" arrowSize={12} gutter={12}>
       <PopoverTrigger>
-        <Box
-          tabIndex={0}
-          role="button"
-          aria-label="Inbox"
-          cursor="pointer"
-          d="flex"
-          alignContent="center"
-        >
+        <HStack tabIndex={0} role="button" aria-label="Inbox" cursor="pointer">
           <EmailIcon boxSize="6" />
-        </Box>
+          <Show below="md">
+            <span>Inbox</span>
+          </Show>
+        </HStack>
       </PopoverTrigger>
       <Portal>
         <PopoverContent
-          zIndex={4}
+          zIndex="popover"
           color="white"
           bg="blue.800"
           borderColor="blue.800"

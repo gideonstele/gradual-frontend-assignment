@@ -32,9 +32,11 @@ export const TimezoneSwitch: FC = () => {
     <Menu>
       <MenuButton
         as={Link}
+        display="block"
         width="auto"
         height="8"
         color="secondary"
+        whiteSpace="nowrap"
         _hover={{
           cursor: 'pointer',
           color: 'primary',
@@ -49,7 +51,7 @@ export const TimezoneSwitch: FC = () => {
         </HStack>
       </MenuButton>
       <Portal>
-        <MenuList zIndex={4} fontSize="sm">
+        <MenuList zIndex="popover" fontSize="sm">
           {timezones.map(tz => (
             <MenuItem key={tz.name} onClick={() => onClick(tz)}>
               {tz.name}

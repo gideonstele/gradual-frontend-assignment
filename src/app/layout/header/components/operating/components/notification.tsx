@@ -8,8 +8,9 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   Button,
-  Box,
   Portal,
+  Show,
+  HStack,
 } from '@chakra-ui/react'
 import { CheckIcon, BellIcon } from '@chakra-ui/icons'
 
@@ -17,20 +18,21 @@ export const Notification = () => {
   return (
     <Popover placement="top-start" arrowSize={12} gutter={12}>
       <PopoverTrigger>
-        <Box
+        <HStack
           tabIndex={0}
           role="button"
           aria-label="Notification"
           cursor="pointer"
-          d="flex"
-          alignContent="center"
         >
           <BellIcon boxSize="6" />
-        </Box>
+          <Show below="md">
+            <span>Notifications</span>
+          </Show>
+        </HStack>
       </PopoverTrigger>
       <Portal>
         <PopoverContent
-          zIndex={4}
+          zIndex="popover"
           color="white"
           bg="blue.800"
           borderColor="blue.800"

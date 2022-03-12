@@ -1,4 +1,4 @@
-import { Avatar, chakra, HStack } from '@chakra-ui/react'
+import { Avatar, chakra, HStack, Show, Stack } from '@chakra-ui/react'
 import { FC } from 'react'
 
 import logo from './components/logo.png'
@@ -22,17 +22,37 @@ export const AppHeader: FC = () => {
   return (
     <StyledAppHeader>
       <HStack
-        align="center"
         height="100%"
         width="100%"
+        spacing="3"
+        justifyContent="space-between"
         paddingInlineStart="6"
         paddingInlineEnd="6"
-        justifyContent="space-between"
+        flexWrap={{
+          base: 'wrap',
+          md: 'nowrap',
+        }}
       >
-        <HStack minWidth="50%">
+        <Stack
+          alignItems="center"
+          justifyContent={{
+            base: 'center',
+            md: 'flex-start',
+          }}
+          direction={{
+            base: 'column',
+            md: 'row',
+          }}
+          minWidth={{
+            base: '100%',
+            md: '50%',
+          }}
+        >
           <Avatar src={logo} rounded="full" width="8" height="8" mr="3" />
-          <Breadcrumb />
-        </HStack>
+          <Show above="md">
+            <Breadcrumb />
+          </Show>
+        </Stack>
         <Operating />
       </HStack>
     </StyledAppHeader>

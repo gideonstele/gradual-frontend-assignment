@@ -7,7 +7,7 @@ import { FC } from 'react'
 
 export const Breadcrumb: FC = () => {
   return (
-    <ChakraBreadcrumb separator="/">
+    <ChakraBreadcrumb separator="/" whiteSpace="nowrap" overflow="hidden">
       <BreadcrumbItem>
         <BreadcrumbLink>ElC Community</BreadcrumbLink>
       </BreadcrumbItem>
