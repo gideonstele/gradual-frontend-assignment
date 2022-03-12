@@ -5,6 +5,8 @@ import {
   MenuItem,
   Link,
   HStack,
+  Icon,
+  Portal,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { RiEarthLine } from 'react-icons/ri'
@@ -32,7 +34,6 @@ export const TimezoneSwitch: FC = () => {
         as={Link}
         width="auto"
         height="8"
-        mx="3"
         color="secondary"
         _hover={{
           cursor: 'pointer',
@@ -40,20 +41,22 @@ export const TimezoneSwitch: FC = () => {
         }}
       >
         <HStack height="100%" alignItems="center">
-          <RiEarthLine size="24px" />
+          <Icon as={RiEarthLine} size="8" />
           <strong>
             UTC - {tz.format('HH:mm')} {timezone.name}
           </strong>
           <ChevronDownIcon mx="2" />
         </HStack>
       </MenuButton>
-      <MenuList fontSize="sm">
-        {timezones.map(tz => (
-          <MenuItem key={tz.name} onClick={() => onClick(tz)}>
-            {tz.name}
-          </MenuItem>
-        ))}
-      </MenuList>
+      <Portal>
+        <MenuList zIndex={4} fontSize="sm">
+          {timezones.map(tz => (
+            <MenuItem key={tz.name} onClick={() => onClick(tz)}>
+              {tz.name}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </Portal>
     </Menu>
   )
 }
