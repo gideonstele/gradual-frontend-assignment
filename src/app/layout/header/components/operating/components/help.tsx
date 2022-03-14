@@ -29,7 +29,7 @@ export const Help = () => {
         <MenuList zIndex="popover" fontSize="sm">
           <MenuItem
             as={Link}
-            href="https://docs.agora.io/en/Video/landing-page?platform=Web"
+            href="https://docs.brand.io/en/Video/landing-page?platform=Web"
             isExternal
           >
             Document Site

@@ -25,9 +25,9 @@ export const Navbar = () => {
         bgGradient="linear(95deg, #F3A32B, #F35B2B)"
         color="white"
         borderRadius="md"
-        h="5"
-        w="90%"
-        fontSize="12px"
+        h="6"
+        px="5px"
+        fontSize="0.5rem"
         _hover={{
           bgGradient: 'linear(95deg, #F3A32B, #F35B2B)',
         }}

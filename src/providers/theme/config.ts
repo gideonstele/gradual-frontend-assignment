@@ -1,7 +1,9 @@
 import { theme as baseTheme, extendTheme } from '@chakra-ui/react'
 
-import { Breadcrumb } from './styles/breadcrumb'
-import { NavItem } from './styles/nav-item'
+import colors from './colors'
+import { Breadcrumb } from './components/breadcrumb'
+import { NavItem } from './components/nav-item'
+import styles from './styles'
 
 export const theme = extendTheme(
   {
@@ -10,6 +12,7 @@ export const theme = extendTheme(
       initialColorMode: 'dark',
       useSystemColorMode: false,
     },
+    colors,
     semanticTokens: {
       colors: {
         background: {
@@ -32,32 +35,13 @@ export const theme = extendTheme(
           default: '#8a8f98',
           _dark: '#7B798F',
         },
-        agora: {
-          default: '#04B17D',
-          _dark: '#04B17D',
+        brand: {
+          default: 'green.500',
+          _dark: 'green.500',
         },
       },
     },
-    styles: {
-      global: {
-        'html, body': {
-          backgroundColor: 'background',
-          color: 'primary',
-          lineHeight: '1.5',
-          width: '100%',
-          height: '100%',
-        },
-        body: {
-          display: 'flex',
-        },
-        '#root': {
-          flex: 1,
-          width: '100%',
-          height: '100%',
-          overflow: 'overlay',
-        },
-      },
-    },
+    styles,
     components: {
       Breadcrumb,
       NavItem,

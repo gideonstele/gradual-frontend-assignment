@@ -13,6 +13,7 @@ import { FC } from 'react'
 
 import { createTimezoneSlice, TimezoneSlice } from './timezone'
 import { createAuthSlice, AuthInfoSlice } from './auth'
+import { createAgoraSlice, AgoraSlice } from './agora'
 
 import type { Draft } from 'immer'
 
@@ -46,6 +47,7 @@ const immer =
 export type RootState = {
   timezone: TimezoneSlice
   auth: AuthInfoSlice
+  agora: AgoraSlice
 }
 
 const createStore = () =>
@@ -59,6 +61,7 @@ const createStore = () =>
       immer((set, get) => ({
         timezone: createTimezoneSlice(set, get),
         auth: createAuthSlice(set, get),
+        agora: createAgoraSlice(set, get),
       })),
       { name: 'prefix' }
     )

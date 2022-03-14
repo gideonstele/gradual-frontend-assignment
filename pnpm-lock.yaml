@@ -33,6 +33,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.1.0
   '@vitejs/plugin-legacy': ^1.6.4
   '@vitejs/plugin-react': ^1.2.0
+  agora-rtc-sdk-ng: ^4.10.0
   ahooks: ^3.0.1
   axios: ^0.24.0
   dayjs: ^1.10.7
@@ -62,7 +63,7 @@ specifiers:
   react-dom: ^17.0.2
   react-icons: ^4.3.1
   react-query: ^3.34.0
-  react-router-dom: ^6.2.1
+  react-router-dom: '6'
   react-test-renderer: ^17.0.2
   rollup: ^2.61.0
   store2: ^2.12.0
@@ -84,6 +85,7 @@ dependencies:
   '@emotion/is-prop-valid': 1.1.2
   '@emotion/react': 11.8.1_7c3ecd89bd75b61b41f2029715ea2305
   '@emotion/styled': 11.8.1_c697ad3c4ddb0545c7a1d619984abba5
+  agora-rtc-sdk-ng: 4.10.0
   ahooks: 3.1.13_react@17.0.2
   axios: 0.24.0
   dayjs: 1.10.8
@@ -2600,6 +2602,10 @@ packages:
       clean-stack: 2.2.0
       indent-string: 4.0.0
     dev: true
+
+  /agora-rtc-sdk-ng/4.10.0:
+    resolution: {integrity: sha512-RnTe/l+UmVK6zbgTqdceLSE7UQPGBDuFEka2LK6dkuEzJDjWOjPOVtkwLTcq6zNB7Lgzm66d26K9WA4ncOsQXg==}
+    dev: false
 
   /ahooks-v3-count/1.0.0:
     resolution: {integrity: sha512-V7uUvAwnimu6eh/PED4mCDjE7tokeZQLKlxg9lCTMPhN+NjsSbtdacByVlR1oluXQzD3MOw55wylDmQo4+S9ZQ==}

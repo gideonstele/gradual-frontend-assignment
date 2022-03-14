@@ -16,9 +16,9 @@ export const NavItem: ComponentStyleConfig = {
   },
   variants: {
     active: {
-      color: 'agora',
+      color: 'brand',
       _hover: {
-        color: 'agora',
+        color: 'brand',
       },
     },
   },

@@ -6,5 +6,8 @@ export const Card = chakra(Box, {
     border: '1px solid',
     borderColor: 'divider',
     borderRadius: 'md',
+    padding: '2',
   },
 })
+
+// export const CardHeader =
