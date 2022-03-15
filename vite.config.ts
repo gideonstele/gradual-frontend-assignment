@@ -4,7 +4,6 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
 import postcssPresetEnv from 'postcss-preset-env'
-import inject from '@rollup/plugin-inject'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 import { browserslist } from './package.json'
@@ -29,50 +28,10 @@ export default defineConfig(configEnv => {
           plugins: ['@emotion/babel-plugin'],
         },
       }),
-      inject({
-        'window.store': 'store2',
-        store: 'store2',
-        include: ['*/**/*.js'],
-      }),
       legacy({
         targets: browserslist[configEnv.mode],
       }),
     ],
-    resolve: {
-      alias: {
-        '@': resolve(__dirname, './src'),
-        '~': resolve(__dirname, 'node_modules'),
-        'store2/src/old': resolve(
-          __dirname,
-          'node_modules/store2/src/store.old.js'
-        ),
-        'store2/src/cache': resolve(
-          __dirname,
-          'node_modules/store2/src/store.cache.js'
-        ),
-        'store2/src/cookie': resolve(
-          __dirname,
-          'node_modules/store2/src/store.cookie.js'
-        ),
-        'store2/src/cookies': resolve(
-          __dirname,
-          'node_modules/store2/src/store.cookies.js'
-        ),
-        'store2/src/on': resolve(
-          __dirname,
-          'node_modules/store2/src/store.on.js'
-        ),
-        'store2/src/deep': resolve(
-          __dirname,
-          'node_modules/store2/src/store.deep.js'
-        ),
-        moment: resolve(__dirname, 'src/utils/replacemoment'),
-        'verification-input': resolve(
-          __dirname,
-          'src/utils/verification-input'
-        ),
-      },
-    },
     css: {
       postcss: {
         map: true,
