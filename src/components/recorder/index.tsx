@@ -5,10 +5,19 @@ import {
   IRemoteAudioTrack,
 } from 'agora-rtc-sdk-ng'
 import { useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
+import { chakra, AspectRatio } from '@chakra-ui/react'
+
+const Container = chakra('div', {
+  position: 'relative',
+  baseStyle: {
+    minWidth: '320px',
+    minHeight: '240px',
+  },
+})
 
 export interface RecorderProps {
-  videoTrack: ILocalVideoTrack | IRemoteVideoTrack | undefined
-  audioTrack: ILocalAudioTrack | IRemoteAudioTrack | undefined
+  videoTrack?: ILocalVideoTrack | IRemoteVideoTrack
+  audioTrack?: ILocalAudioTrack | IRemoteAudioTrack
 }
 
 export const Recorder = forwardRef<HTMLDivElement, RecorderProps>(
@@ -24,6 +33,7 @@ export const Recorder = forwardRef<HTMLDivElement, RecorderProps>(
         videoTrack?.stop()
       }
     }, [innerRef, videoTrack])
+
     useEffect(() => {
       if (audioTrack) {
         audioTrack?.play()
@@ -32,12 +42,11 @@ export const Recorder = forwardRef<HTMLDivElement, RecorderProps>(
         audioTrack?.stop()
       }
     }, [audioTrack])
+
     return (
-      <div
-        ref={innerRef}
-        className="video-player"
-        style={{ width: '320px', height: '240px' }}
-      ></div>
+      <AspectRatio ratio={16 / 9}>
+        <Container ref={innerRef} />
+      </AspectRatio>
     )
   }
 )

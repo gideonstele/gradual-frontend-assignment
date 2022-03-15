@@ -19,7 +19,7 @@ export const createAuthSlice = (
 ) => ({
   auth: {
     username: 'Luna Chen',
-    avatar: 'https://avatars3.githubusercontent.com/u/8186664?s=460&v=4',
+    avatar: 'https://i.pravatar.cc/150?u=mcOMUpFF7gYKWWhhz8T7w',
     email: 'luna.chen@somemail.com',
   },
   loginOut: () =>

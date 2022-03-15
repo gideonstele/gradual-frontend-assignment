@@ -8,6 +8,7 @@ const styles: ChakraTheme['styles'] = {
       lineHeight: '1.5',
       width: '100%',
       height: '100%',
+      fontFamily: 'Inter, Arial, sans-serif',
     },
     body: {
       display: 'flex',

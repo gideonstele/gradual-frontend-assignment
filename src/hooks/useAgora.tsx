@@ -54,12 +54,11 @@ export function useAgora(client: IAgoraRTCClient | undefined): {
   ) {
     if (!client) return
     const [microphoneTrack, cameraTrack] = await createLocalTracks()
-
     await client.join(appid, channel, token || null)
     await client.publish([microphoneTrack, cameraTrack])
     window.client = client
     window.videoTrack = cameraTrack
-
+    console.log('join success')
     setJoinState(true)
   }
 
@@ -93,6 +92,7 @@ export function useAgora(client: IAgoraRTCClient | undefined): {
       setRemoteUsers(remoteUsers => Array.from(client.remoteUsers))
     }
     const handleUserJoined = (user: IAgoraRTCRemoteUser) => {
+      console.log('handleUserJoined', user)
       setRemoteUsers(remoteUsers => Array.from(client.remoteUsers))
     }
     const handleUserLeft = (user: IAgoraRTCRemoteUser) => {

@@ -22,8 +22,9 @@ export const createAgoraSlice = (
 ) => ({
   value: {
     appid: 'f7b9c793ad4c4f6693e2c4f978984833',
-    token: '857870a36951440589edafef8116472d',
-    channel: '1ffd399a711bbe36ac4407c9c618a79f',
+    token:
+      '006f7b9c793ad4c4f6693e2c4f978984833IABvKcBgqfohM8hVVUTiWKISvinQUfIYLHCDHDDa+8FYX7fv3IMAAAAAEADnfDPK+BgyYgEAAQD3GDJi',
+    channel: '1',
   },
   setAppid: (appid: string) =>
     set(draft => {
